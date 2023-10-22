@@ -1,11 +1,20 @@
-import React from "react";
+import Hero from "@components/Pages/Hero";
+import About from "@components/Pages/About";
+import Skills from "@components/Pages/Skills";
+import Contact from "@components/Pages/Contact";
+import Projects from "@components/Pages/Projects";
 
-export default function HomaPage() {
+export default function Home() {
 	return (
 		<>
-			<div className="header center text-main mt-24">Header</div>
-			<div className="title center text-main mt-24">Title</div>
-			<div className="subtitle center text-main mt-24">Subtitle</div>
+			<div className="space-y-48">
+				<Hero />
+				<hr />
+				<About />
+				<Skills />
+				<Projects />
+				<Contact />
+			</div>
 		</>
 	);
 }
