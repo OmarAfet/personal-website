@@ -8,6 +8,9 @@ import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
 	title: "Omar Afet | Personal Website",
 	description: "Omar Afet's personal website",
+	icons: {
+		icon: "/public/Avatar.png",
+	},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
