@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
 	title: "Omar Afet | Personal Website",
-	description: "Omar Afet&apos;s personal website",
+	description: "Omar Afet's personal website",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
