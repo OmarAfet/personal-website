@@ -51,7 +51,7 @@ export default function About() {
 			</CodeBlock>
 
 			<p>
-				That's it! You're ready to start building your awesome web application with this template. If you have any questions or feedback, feel free to reach out to{" "}
+				That&apos;s it! You&apos;re ready to start building your awesome web application with this template. If you have any questions or feedback, feel free to reach out to{" "}
 				<Link className="link" href="https://github.com/OmarAfet">
 					@OmarAfet
 				</Link>{" "}
