@@ -13,7 +13,7 @@ export default function Hero() {
 					</Link>
 				</p>
 			</div>
-			<div className="space-x-4">
+			<div className="flex gap-4">
 				<Link href="/">
 					<Button>Get Started</Button>
 				</Link>
