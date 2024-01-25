@@ -1,12 +1,9 @@
 "use client";
 
-import * as React from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import clsx from "clsx";
 
 export function ModeToggle() {
 	const { theme, setTheme } = useTheme();

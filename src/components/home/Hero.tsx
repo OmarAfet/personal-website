@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
 	return (
-		<div className="center flex-col space-y-8 mt-16 lg:mt-32">
+		<div className="center flex-col space-y-8">
 			<div className="flex-col center space-y-4">
 				<h1>Welcome to Logo</h1>
 				<p className="text-muted-foreground">

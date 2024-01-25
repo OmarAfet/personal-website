@@ -1,0 +1,116 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+const formSchema = z.object({
+	email: z.string().email(),
+	subject: z.string().min(5),
+	message: z.string().min(10),
+});
+
+export default function Contact() {
+	const form = useForm<z.infer<typeof formSchema>>({
+		resolver: zodResolver(formSchema),
+		defaultValues: {
+			email: "",
+			subject: "",
+			message: "",
+		},
+	});
+
+	function handleSubmit(values: z.infer<typeof formSchema>) {
+		const payload = {
+			username: values.email,
+			embeds: [
+				{
+					title: values.subject,
+					description: values.message,
+				},
+			],
+		};
+
+		fetch("https://discord.com/api/webhooks/1199816483006595133/BQy84W-6CEplkgWJXpx_NmZUz0c3pw7CBcTsdOTwBKzOGN_IkLsl8QzXJuqUoRT7-a_g", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(payload),
+		})
+			.then((response) => {
+				if (response.ok) {
+					console.log("Embedded message sent successfully.");
+				} else {
+					throw new Error("Failed to send embedded message");
+				}
+			})
+			.catch((error) => {
+				console.error("Failed to send embedded message:", error);
+			});
+	}
+
+	return (
+		<Card className="max-w-md mx-auto">
+			<Form {...form}>
+				<form onSubmit={form.handleSubmit(handleSubmit)}>
+					<CardHeader>
+						<CardTitle className="mt-4">Contact Support</CardTitle>
+						<CardDescription>Have a question or need help? We&apos;re here for you.</CardDescription>
+					</CardHeader>
+					<CardContent className="flex flex-col gap-4">
+						<FormField
+							control={form.control}
+							name="email"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Email</FormLabel>
+									<FormControl>
+										<Input {...field} placeholder="Enter your email" type="email" />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						<FormField
+							control={form.control}
+							name="subject"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Subject</FormLabel>
+									<FormControl>
+										<Input {...field} placeholder="Enter the subject" type="text" />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+						<FormField
+							control={form.control}
+							name="message"
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Message</FormLabel>
+									<FormControl>
+										<Textarea {...field} placeholder="Enter your Message" />
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+					</CardContent>
+					<CardFooter>
+						<Button className="flex-1" type="submit">
+							Submit
+						</Button>
+					</CardFooter>
+				</form>
+			</Form>
+		</Card>
+	);
+}

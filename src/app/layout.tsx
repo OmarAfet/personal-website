@@ -9,7 +9,10 @@ import MainProvider from "@/providers/MainProvider";
 const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "NextJS Template by @OmarAfet",
+	title: {
+		template: "%s | NextJS Template",
+		default: "NextJS Template by @OmarAfet",
+	},
 	description: "A NextJS template with TailwindCSS, TypeScript, and more. made by @OmarAfet",
 };
 
@@ -19,7 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			<body className={`${font.className} h-screen antialiased flex flex-col`}>
 				<MainProvider>
 					<Header />
-					<main className="flex-1 container">{children}</main>
+					<main className="flex-1 container my-16">{children}</main>
 					<Footer />
 				</MainProvider>
 			</body>

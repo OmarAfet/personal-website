@@ -4,7 +4,7 @@ import getCode from "@/lib/getCodeContent";
 
 export default function About() {
 	return (
-		<div className="py-16 px-8">
+		<div className="px-8">
 			<h1>About This Template</h1>
 
 			<p>
