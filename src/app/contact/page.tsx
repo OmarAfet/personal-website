@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
 	email: z.string().email(),
@@ -16,6 +17,8 @@ const formSchema = z.object({
 });
 
 export default function Contact() {
+	const { toast } = useToast();
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -45,7 +48,10 @@ export default function Contact() {
 		})
 			.then((response) => {
 				if (response.ok) {
-					console.log("Embedded message sent successfully.");
+					toast({
+						title: "Your message has been sent!",
+						description: "We will get back to you as soon as possible.",
+					});
 				} else {
 					throw new Error("Failed to send embedded message");
 				}

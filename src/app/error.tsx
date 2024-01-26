@@ -15,12 +15,9 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 			<div className="center flex-col gap-4">
 				<h1 className="font-bold text-red-500">ERROR</h1>
 				<Separator />
-				<div>
-					<h4>Something went wrong!</h4>
-					<p>
-						We&apos;re sorry, but an error occurred while processing your request. Please try again later. If the problem persists, please contact <Link href="/support">support</Link>.
-					</p>
-				</div>
+				<p className="!mt-0">
+					We&apos;re sorry, but an error occurred while processing your request. Please try again later. If the problem persists, please contact <Link href="/support">support</Link>.
+				</p>
 			</div>
 			<div className="flex flex-wrap center gap-4">
 				<Button variant="outline">

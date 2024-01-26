@@ -5,6 +5,7 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import MainProvider from "@/providers/MainProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			<body className={`${font.className} h-screen antialiased flex flex-col`}>
 				<MainProvider>
 					<Header />
-					<main className="flex-1 container my-16">{children}</main>
+					<main className="flex-1 container my-8 md:my-16">{children}</main>
 					<Footer />
+					<Toaster />
 				</MainProvider>
 			</body>
 		</html>
