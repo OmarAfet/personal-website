@@ -1,38 +1,22 @@
+import { Toaster } from "@/components/ui/toaster";
+import MainProvider from "@/providers/MainProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import MainProvider from "@/providers/MainProvider";
-import { Toaster } from "@/components/ui/toaster";
 
 const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Template", // %s will be replaced with the page title
-    default: "Template",
-  },
-  description: "A Sstraightforward NextJS Template Made by @OmarAfet",
-  keywords: ["Template", "Keyword 2", "Keyword 3"],
-  metadataBase: new URL("https://template.omarafet.vercel.app"),
-  authors: { url: "https://github.com/OmarAfet", name: "OmarAfet" },
-  icons: {
-    icon: [
-      {
-        rel: "icon",
-        type: "image/png",
-        url: "/icon-dark.png",
-        href: "/icon-dark.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        rel: "icon",
-        type: "image/png",
-        url: "/icon-light.png",
-        href: "/icon-light.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
-  },
+  title: "Omar Afet",
+  description: "Studying Computer Networks & Freelance Developer",
+  keywords: [
+    "Omar Alenezi",
+    "OmarAfet",
+    "Computer Networks Specialist",
+    "Freelance Developer",
+  ],
+  metadataBase: new URL("https://omarafet.vercel.app"),
+  authors: { url: "https://twitter.com/OmarAfet", name: "OmarAfet" },
 };
 
 export default function RootLayout({
