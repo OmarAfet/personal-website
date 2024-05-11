@@ -1,3 +1,4 @@
+import { getLastUpdateDate } from "@/actions";
 import ProjectCard from "@/components/common/ProjectCard";
 import SkillsSection from "@/components/common/SkillsSection";
 import SocialLink from "@/components/common/SocialLink";
@@ -9,10 +10,12 @@ import {
   RiTwitterXFill,
 } from "react-icons/ri";
 
-export default function Home() {
+export default async function Home() {
   const sortedProjects = projects.sort((a, b) => {
     return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
   });
+
+  const lastUpdateDate = await getLastUpdateDate();
 
   return (
     <div className="center m-auto flex max-w-lg flex-col">
@@ -30,8 +33,10 @@ export default function Home() {
         <SocialLink href="https://www.linkedin.com/in/omarafet/">
           <RiLinkedinBoxFill className="h-6 w-6" />
         </SocialLink>
-        <ThemeToggle />
+        <ThemeToggle className="fixed left-2 top-2" />
       </div>
+      <hr className="my-4 w-full" />
+      <i>Looking for an Online Job</i>
       <hr className="my-4 w-full" />
       <SkillsSection />
       <hr className="my-4 w-full" />
@@ -42,6 +47,10 @@ export default function Home() {
         ))}
         <div className="center text-xs text-muted-foreground">
           More Coming in the Future...
+        </div>
+        <div className="fixed bottom-2 left-2 text-xs text-muted-foreground">
+          Updated at{" "}
+          {`${new Date(lastUpdateDate.updated_at).getFullYear()}-${new Date(lastUpdateDate.updated_at).getMonth() + 1}-${new Date(lastUpdateDate.updated_at).getDate()}`}
         </div>
       </div>
     </div>
