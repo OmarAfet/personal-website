@@ -1,11 +1,19 @@
 export default [
   {
+    title: "BS6H - بسطة",
+    description:
+      "A simple, free non-profit platform for buying and selling without any fees.",
+    link: "https://bs6h.com",
+    createdAt: "2024-5-20",
+    archived: false,
+  },
+  {
     title: "Webernow",
     description:
       "A user-friendly platform designed to simplify the process of creating web applications.",
     link: "https://webernow.com",
     createdAt: "2023-9-22",
-    archived: false,
+    archived: true,
   },
   {
     title: "SmartAI",
