@@ -13,6 +13,7 @@ export default function SocialLink({
     <Link
       className={cn(`${buttonVariants({ variant: "ghost", size: "icon" })}`)}
       href={href}
+      target="_blank"
     >
       {children}
     </Link>
