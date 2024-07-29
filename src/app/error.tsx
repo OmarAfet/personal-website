@@ -7,10 +7,8 @@ import { useEffect } from "react";
 
 export default function Error({
   error,
-  // reset,
 }: {
   error: Error & { digest?: string };
-  // reset: () => void;
 }) {
   useEffect(() => {
     console.error(error);
@@ -23,19 +21,12 @@ export default function Error({
         <Separator />
         <p className="!mt-0">
           We&apos;re sorry, but an error occurred while processing your request.
-          Please try again later. If the problem persists, please contact{" "}
-          <Link href="/support">support</Link>.
+          Please try again later.
         </p>
       </div>
       <div className="center flex flex-wrap gap-4">
         <Link className={buttonVariants({ variant: "default" })} href="/">
           Return Home
-        </Link>
-        <Link
-          className={buttonVariants({ variant: "outline" })}
-          href="/contact"
-        >
-          Contact Us
         </Link>
       </div>
     </div>
