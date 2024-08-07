@@ -1,10 +1,10 @@
 import { Toaster } from "@/components/ui/toaster";
 import MainProvider from "@/providers/MainProvider";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik as Font } from "next/font/google";
 import "./globals.css";
 
-const font = Inter({ subsets: ["latin"] });
+const font = Font({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Omar Afet",
