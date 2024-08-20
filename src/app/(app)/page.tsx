@@ -1,19 +1,17 @@
-import { getLastUpdateDate } from "@/actions";
+export const dynamic = "error"
+
 import ProjectCard from "@/components/common/ProjectCard";
 import SkillsSection from "@/components/common/SkillsSection";
 import SocialLink from "@/components/common/SocialLink";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
+import UpdateDate from "@/components/common/UpdateDate";
 import projects from "@/data/projects";
 import social_links from "@/data/social_links";
-import { format } from "date-fns";
 
 export default async function Home() {
   const sortedProjects = projects.sort((a, b) => {
     return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
   });
-
-  const { updated_at } = await getLastUpdateDate();
-  const formattedDate = format(new Date(updated_at), "yyyy-MM-dd");
 
   return (
     <div className="center m-auto flex max-w-lg flex-col">
@@ -42,9 +40,7 @@ export default async function Home() {
         <i className="center text-xs text-muted-foreground">
           More Coming in the Future...
         </i>
-        <div className="fixed bottom-2 left-2 text-xs text-muted-foreground">
-          Updated at {formattedDate}
-        </div>
+        <UpdateDate />
       </div>
     </div>
   );
