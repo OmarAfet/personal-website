@@ -17,5 +17,6 @@ declare global {
   interface SocialLink {
     href: string;
     Icon: IconType;
+    ariaLabel: string;
   }
 }

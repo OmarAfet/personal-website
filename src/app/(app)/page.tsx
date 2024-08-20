@@ -22,8 +22,8 @@ export default async function Home() {
         Studying Computer Networks & Freelance Developer
       </p>
       <div className="mt-2 flex gap-1">
-        {social_links.map(({ href, Icon }) => (
-          <SocialLink key={href} href={href}>
+        {social_links.map(({ href, Icon, ariaLabel }) => (
+          <SocialLink key={href} href={href} ariaLabel={ariaLabel}>
             <Icon className="h-6 w-6" />
           </SocialLink>
         ))}
@@ -34,7 +34,7 @@ export default async function Home() {
       <hr className="my-4 w-full" />
       <SkillsSection />
       <hr className="my-4 w-full" />
-      <h3 className="mb-4 mt-0">Projects</h3>
+      <h2 className="mb-2 mt-0 border-none text-[25px]">Projects</h2>
       <div className="flex w-full flex-col gap-2">
         {sortedProjects.map((project, index) => (
           <ProjectCard key={index} project={project} />
