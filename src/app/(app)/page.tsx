@@ -1,5 +1,3 @@
-export const dynamic = "error"
-
 import ProjectCard from "@/components/common/ProjectCard";
 import SkillsSection from "@/components/common/SkillsSection";
 import SocialLink from "@/components/common/SocialLink";
@@ -16,7 +14,7 @@ export default async function Home() {
   return (
     <div className="center m-auto flex max-w-lg flex-col">
       <h1>Omar Afet</h1>
-      <p className="!mt-0 text-muted-foreground">
+      <p className="!mt-0 text-muted-foreground text-center">
         Studying Computer Networks & Freelance Developer
       </p>
       <div className="mt-2 flex gap-1">
