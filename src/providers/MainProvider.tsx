@@ -1,5 +1,5 @@
-import React from "react";
 import { ThemeProvider } from "./ThemeProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function MainProvider({
   children,
@@ -7,6 +7,11 @@ export default function MainProvider({
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
+      {process.env.NODE_ENV === "production" && (
+        <>
+          <Analytics />
+        </>
+      )}
     </ThemeProvider>
   );
 }

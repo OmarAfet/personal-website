@@ -38,6 +38,7 @@
     "@radix-ui/react-toggle-group": "latest",
     "@radix-ui/react-tooltip": "latest",
     "@types/react-day-picker": "latest",
+    "@vercel/analytics": "latest",
     "class-variance-authority": "latest",
     "clsx": "latest",
     "cmdk": "latest",
