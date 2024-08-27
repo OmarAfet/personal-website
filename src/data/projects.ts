@@ -11,7 +11,7 @@ export default [
     title: "Webernow",
     description:
       "A user-friendly platform designed to simplify the process of creating web applications.",
-    link: "https://webernow.com",
+    link: "https://github.com/OmarAfet/webernow",
     createdAt: "2023-9-22",
     archived: true,
   },
