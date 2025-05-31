@@ -1,12 +1,11 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { cn } from "@/utils";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { useTheme } from "next-themes";
 
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
-export function ThemeToggle({ className }: { className?: string }) {
+export function ThemeSwitcher({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
 
   function toggleTheme() {
@@ -15,7 +14,7 @@ export function ThemeToggle({ className }: { className?: string }) {
 
   return (
     <Button
-      className={cn(className)}
+      className={cn(className, "cursor-pointer")}
       onClick={toggleTheme}
       variant="ghost"
       size="icon"

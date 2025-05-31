@@ -1,5 +1,26 @@
 export default [
   {
+    title: "Rustified",
+    description: "A command-line Minecraft launcher written in Rust.",
+    link: "https://github.com/OmarAfet/rustified",
+    createdAt: "2025-4-18",
+    archived: false,
+  },
+  {
+    title: "Set On Fire",
+    description: "A minecraft mod that sets entities on fire by right-clicking them with a flint and steel.",
+    link: "https://github.com/OmarAfet/set_on_fire",
+    createdAt: "2024-10-14",
+    archived: false,
+  },
+  {
+    title: "Structure Generator",
+    description: "A Visual Studio Code extension that helps you generate and visualize your workspace's directory structure with advanced filtering and content display options.",
+    link: "https://github.com/OmarAfet/structure-generator",
+    createdAt: "2024-9-14",
+    archived: false,
+  },
+  {
     title: "BS6H - بسطة",
     description:
       "A simple, free non-profit platform for buying and selling without any fees.",
