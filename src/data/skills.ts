@@ -18,4 +18,5 @@ export default [
   { name: "Cisco", level: 6 },
   { name: "Figma", level: 8 },
   { name: "Photoshop", level: 8 },
+  { name: "Reverse Engineering", level: 6 },
 ] as Skill[];
