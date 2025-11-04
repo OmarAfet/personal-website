@@ -35,7 +35,7 @@ export default async function Home() {
           <ProjectCard key={index} project={project} />
         ))}
         <i className="items-center justify-center text-xs text-muted-foreground">
-          More Coming in the Future...
+          Much more private projects...
         </i>
         <UpdateDate />
       </div>
