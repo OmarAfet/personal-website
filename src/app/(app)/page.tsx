@@ -15,7 +15,7 @@ export default async function Home() {
     <div className="items-center justify-center m-auto flex max-w-lg flex-col">
       <h1 className="text-4xl font-black">Omar Afet</h1>
       <p className="!mt-0 text-muted-foreground text-center">
-        Computer Networks student at King Saud University · Self-Taught · AI · Mathematics · Science · Quantum Computing
+        Computer Networks student at King Saud University · Self-Taught · AI · Mathematics · Coding · Science · Quantum Computing
       </p>
       {/* TODO: Contribution Graph */}
       <div className="mt-2 flex gap-1">
