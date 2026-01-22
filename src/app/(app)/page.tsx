@@ -15,7 +15,26 @@ export default async function Home() {
     <div className="items-center justify-center m-auto flex max-w-lg flex-col">
       <h1 className="text-4xl font-black">Omar Afet</h1>
       <p className="!mt-0 text-muted-foreground text-center">
-        Computer Networks student at King Saud University, with a strong interest in AI, mathematics, and their applications in science. Freelance developer.
+        COOP Training at{" "}
+        <a
+          href="https://x.com/SDAIA_SA"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:underline text-foreground"
+        >
+          @SDAIA_SA
+        </a>{" "}
+        · Self-Taught ·{" "}
+        <a
+          href="https://x.com/_KSU"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:underline text-foreground"
+        >
+          @_KSU
+        </a>{" "}
+        · AI · Mathematics · Coding · Science · Quantum Computing · Fascinated by
+        the strength and science of Time
       </p>
       {/* TODO: Contribution Graph */}
       <div className="mt-2 flex gap-1">
