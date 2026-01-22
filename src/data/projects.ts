@@ -1,8 +1,8 @@
 export default [
   {
-    title: "Rustified",
+    title: "Redstonium",
     description: "A command-line Minecraft launcher written in Rust.",
-    link: "https://github.com/OmarAfet/rustified",
+    link: "https://github.com/ObsidiumMC/Redstonium",
     createdAt: "2025-4-18",
     archived: false,
   },
