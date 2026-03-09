@@ -1,5 +1,12 @@
 export default [
   {
+    title: "ردجات - Drjat.sa",
+    description: "المنصة التعليمية المتكاملة للتحضير لاختبارات قياس في المملكة.",
+    link: "https://drjat.sa",
+    createdAt: "2026-1-1",
+    archived: false,
+  },
+  {
     title: "Redstonium",
     description: "A command-line Minecraft launcher written in Rust.",
     link: "https://github.com/ObsidiumMC/Redstonium",
