@@ -1,6 +1,6 @@
 export default [
   {
-    title: "ردجات - Drjat.sa",
+    title: "درجات - Drjat.sa",
     description: "المنصة التعليمية المتكاملة للتحضير لاختبارات قياس في المملكة.",
     link: "https://drjat.sa",
     createdAt: "2026-1-1",
