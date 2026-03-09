@@ -33,7 +33,7 @@ export default async function Home() {
         >
           @_KSU
         </a>{" "}
-        · AI · Mathematics · Coding · Science · Quantum Computing · Fascinated by
+        · AI · Cyber Security · Mathematics · Coding · Science · Quantum Computing · Fascinated by
         the strength and science of Time
       </p>
       {/* TODO: Contribution Graph */}
