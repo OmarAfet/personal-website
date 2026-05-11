@@ -1,15 +1,29 @@
 export default [
   {
-    title: "درجات - Drjat.sa",
-    description: "المنصة التعليمية المتكاملة للتحضير لاختبارات قياس في المملكة.",
+    title: "DC Designer",
+    description: "أداة تصميم ثلاثية الأبعاد عبر الويب لنمذجة، وتصور، وإدارة البنية التحتية لمراكز البيانات وتخطيطاتها.",
+    link: "https://dc-designer.vercel.app",
+    createdAt: "2026-3-30",
+    archived: false,
+  },
+  {
+    title: "منزال - Mnzal.sa",
+    description: "A Saudi real estate platform licensed by the Real Estate General Authority, aiming to facilitate real estate marketing through a reliable and seamless experience.",
+    link: "https://mnzal.sa",
+    createdAt: "2026-3-11",
+    archived: false,
+  },
+  {
+    title: "درجــــات - Drjat.sa",
+    description: "An educational platform that empowers students in Saudi Arabia to excel in Qiyas exams through artificial intelligence technologies, realistic test simulations, and much more.",
     link: "https://drjat.sa",
     createdAt: "2026-1-1",
     archived: false,
   },
   {
     title: "Redstonium",
-    description: "A command-line Minecraft launcher written in Rust.",
-    link: "https://github.com/ObsidiumMC/Redstonium",
+    description: "A Minecraft launcher built with Rust and GPUI",
+    link: "https://github.com/OmarAfet/Redstonium",
     createdAt: "2025-4-18",
     archived: false,
   },
