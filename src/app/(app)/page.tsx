@@ -1,72 +1,62 @@
-import ProjectCard from "@/components/common/ProjectCard";
-import SkillsSection from "@/components/common/SkillsSection";
+import DomainsSection from "@/components/common/DomainsSection";
+import SectionLabel from "@/components/common/SectionLabel";
 import SocialLink from "@/components/common/SocialLink";
 import { ThemeSwitcher } from "@/components/common/ThemeSwitcher";
+import Timeline from "@/components/common/Timeline";
 import UpdateDate from "@/components/common/UpdateDate";
 import projects from "@/data/projects";
 import social_links from "@/data/social_links";
 
-export default async function Home() {
-  const sortedProjects = projects.sort((a, b) => {
-    return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-  });
+const handle = (href: string, label: string) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="text-foreground decoration-time/60 underline-offset-4 hover:underline"
+  >
+    {label}
+  </a>
+);
+
+export default function Home() {
+  const years = projects.map((p) => new Date(p.createdAt).getFullYear());
+  const span = `${Math.min(...years)} — ${Math.max(...years)}`;
 
   return (
-    <div className="m-auto flex max-w-lg flex-col items-center justify-center">
-      <h1 className="text-4xl font-black">Omar Afet</h1>
-      <p className="text-muted-foreground !mt-0 text-center">
-        Founder & CEO{" "}
-        <a
-          href="https://x.com/DRJAT_SA"
-          target="_blank"
-          rel="noreferrer"
-          className="text-foreground hover:underline"
-        >
-          @DRJAT_SA
-        </a>{" "}
-        · Ex-COOP{" "}
-        <a
-          href="https://x.com/SDAIA_SA"
-          target="_blank"
-          rel="noreferrer"
-          className="text-foreground hover:underline"
-        >
-          @SDAIA_SA
-        </a>{" "}
-        · Fresh Grad{" "}
-        <a
-          href="https://x.com/_KSU"
-          target="_blank"
-          rel="noreferrer"
-          className="text-foreground hover:underline"
-        >
-          @_KSU
-        </a>{" "}
-        · AI · Cyber Security · Coding · Quantum Computing · Fascinated by the
-        science of Time
-      </p>
-      {/* TODO: Contribution Graph */}
-      <div className="mt-2 flex gap-1">
-        {social_links.map(({ href, Icon, ariaLabel }) => (
-          <SocialLink key={href} href={href} ariaLabel={ariaLabel}>
-            <Icon className="h-6 w-6" />
-          </SocialLink>
-        ))}
-        <ThemeSwitcher />
+    <main className="mx-auto w-full max-w-2xl px-6 py-16 sm:py-24">
+      <header>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+          Omar Afet
+        </h1>
+        <p className="text-muted-foreground mt-4 leading-relaxed text-pretty">
+          Founder &amp; CEO {handle("https://x.com/DRJAT_SA", "@DRJAT_SA")} ·
+          Ex-COOP {handle("https://x.com/SDAIA_SA", "@SDAIA_SA")} · Fresh Grad{" "}
+          {handle("https://x.com/_KSU", "@_KSU")} · AI · Cyber Security · Coding
+          · Quantum Computing · Fascinated by the science of Time
+        </p>
+        <div className="-ml-2 flex gap-0.5 pt-5">
+          {social_links.map(({ href, Icon, ariaLabel }) => (
+            <SocialLink key={href} href={href} ariaLabel={ariaLabel}>
+              <Icon className="h-[1.15rem] w-[1.15rem]" />
+            </SocialLink>
+          ))}
+          <ThemeSwitcher />
+        </div>
+      </header>
+
+      <div className="mt-16">
+        <DomainsSection />
       </div>
-      <hr className="my-4 w-full" />
-      <SkillsSection />
-      <hr className="my-4 w-full" />
-      <h2 className="mt-0 mb-2 text-2xl font-bold">Projects</h2>
-      <div className="flex w-full flex-col gap-2">
-        {sortedProjects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-        <i className="text-muted-foreground items-center justify-center text-xs">
+
+      <section className="mt-16">
+        <SectionLabel trailing={span}>Selected work</SectionLabel>
+        <Timeline projects={projects} />
+        <p className="text-muted-foreground/70 pl-6 text-xs italic sm:pl-[5.25rem]">
           Much more private projects...
-        </i>
-        <UpdateDate />
-      </div>
-    </div>
+        </p>
+      </section>
+
+      <UpdateDate />
+    </main>
   );
 }

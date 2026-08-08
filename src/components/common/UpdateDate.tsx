@@ -5,8 +5,8 @@ export default function UpdateDate() {
   const formattedDate = format(new Date(), "yyyy-MM-dd");
 
   return (
-    <div className="text-muted-foreground fixed bottom-2 left-2 text-xs">
-      Updated at {formattedDate}
-    </div>
+    <footer className="border-border text-muted-foreground mt-20 border-t pt-6 font-mono text-xs tracking-wide">
+      Updated at <span className="tabular-nums">{formattedDate}</span>
+    </footer>
   );
 }
