@@ -9,9 +9,9 @@ declare global {
     archived: boolean;
   }
 
-  interface Skill {
+  interface Domain {
     name: string;
-    level: number;
+    detail: string;
   }
 
   interface SocialLink {

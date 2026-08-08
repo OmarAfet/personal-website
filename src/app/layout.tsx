@@ -1,10 +1,22 @@
 import { Toaster } from "@/components/ui/toaster";
 import MainProvider from "@/providers/MainProvider";
 import type { Metadata } from "next";
-import { Rubik as Font } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 
-const font = Font({ subsets: ["latin"] });
+// One superfamily for both scripts, so Arabic and Latin share a voice.
+const sans = IBM_Plex_Sans_Arabic({
+  subsets: ["latin", "arabic"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-plex-sans",
+});
+
+// Carries the years and the section labels - the data voice.
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+});
 
 export const metadata: Metadata = {
   title: "Omar Afet",
@@ -24,10 +36,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
-      <body className={font.className}>
+    <html
+      lang="en"
+      className={`${sans.variable} ${mono.variable} !scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans antialiased">
         <MainProvider>
-          <div className="h-screen">{children}</div>
+          {children}
           <Toaster />
         </MainProvider>
       </body>
