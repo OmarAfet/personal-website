@@ -1,23 +1,49 @@
 export default [
   {
+    title: "Reqab | رِقَاب",
+    description:
+      "An AI contract-risk analyser trained on Alinma, SAMA and PDPL policy. It flags hidden fees, risky clauses and Shariah issues, scores contract risk out of 100, and generates contracts as PDF. Built for the Amad Hackathon (Tuwaiq × Alinma), AI track.",
+    link: "https://reqab.vercel.app",
+    createdAt: "2026-6-1",
+    archived: false,
+  },
+  {
     title: "DC Designer",
-    description: "أداة تصميم ثلاثية الأبعاد عبر الويب لنمذجة، وتصور، وإدارة البنية التحتية لمراكز البيانات وتخطيطاتها.",
+    description:
+      "أداة تصميم ثلاثية الأبعاد عبر الويب لنمذجة، وتصور، وإدارة البنية التحتية لمراكز البيانات وتخطيطاتها.",
     link: "https://dc-designer.vercel.app",
     createdAt: "2026-3-30",
     archived: false,
   },
   {
     title: "منزال - Mnzal.sa",
-    description: "A Saudi real estate platform licensed by the Real Estate General Authority, aiming to facilitate real estate marketing through a reliable and seamless experience.",
+    description:
+      "A Saudi real estate platform licensed by the Real Estate General Authority, aiming to facilitate real estate marketing through a reliable and seamless experience.",
     link: "https://mnzal.sa",
     createdAt: "2026-3-11",
     archived: false,
   },
   {
     title: "درجــــات - Drjat.sa",
-    description: "An educational platform that empowers students in Saudi Arabia to excel in Qiyas exams through artificial intelligence technologies, realistic test simulations, and much more.",
+    description:
+      "An educational platform that empowers students in Saudi Arabia to excel in Qiyas exams through artificial intelligence technologies, realistic test simulations, and much more.",
     link: "https://drjat.sa",
     createdAt: "2026-1-1",
+    archived: false,
+  },
+  {
+    title: "SDN-Based Honeypot Framework",
+    description:
+      "Graduation project at King Saud University. A Software-Defined Networking defence designed not to block a suspicious connection, but to silently reroute the attacker into a honeypot they believe is a real server, so their behaviour can be observed and logged. Designed around Ryu / OpenDaylight, Open vSwitch with OpenFlow 1.3, Cowrie and Dionaea, and Cisco Modeling Labs.",
+    createdAt: "2025-11-1",
+    archived: false,
+  },
+  {
+    title: "Obsidium",
+    description:
+      "A high-performance Minecraft server written from scratch in Rust.",
+    link: "https://github.com/ObsidiumMC/Obsidium",
+    createdAt: "2025-6-1",
     archived: false,
   },
   {
@@ -29,14 +55,16 @@ export default [
   },
   {
     title: "Set On Fire",
-    description: "A minecraft mod that sets entities on fire by right-clicking them with a flint and steel.",
+    description:
+      "A minecraft mod that sets entities on fire by right-clicking them with a flint and steel.",
     link: "https://github.com/OmarAfet/set_on_fire",
     createdAt: "2024-10-14",
     archived: false,
   },
   {
     title: "Structure Generator",
-    description: "A Visual Studio Code extension that helps you generate and visualize your workspace's directory structure with advanced filtering and content display options.",
+    description:
+      "A Visual Studio Code extension that helps you generate and visualize your workspace's directory structure with advanced filtering and content display options.",
     link: "https://github.com/OmarAfet/structure-generator",
     createdAt: "2024-9-14",
     archived: false,

@@ -4,7 +4,7 @@ declare global {
   interface Project {
     title: string;
     description: string;
-    link: string;
+    link?: string;
     createdAt: string;
     archived: boolean;
   }
