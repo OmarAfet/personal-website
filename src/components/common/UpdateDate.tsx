@@ -6,7 +6,7 @@ export default async function UpdateDate() {
   const formattedDate = format(new Date(updated_at), "yyyy-MM-dd");
 
   return (
-    <div className="fixed bottom-2 left-2 text-xs text-muted-foreground">
+    <div className="text-muted-foreground fixed bottom-2 left-2 text-xs">
       Updated at {formattedDate}
     </div>
   );
