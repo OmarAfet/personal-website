@@ -26,4 +26,6 @@ export default [
   { name: "AHK", level: 9 },
   { name: "Automations", level: 8 },
   { name: "AWS", level: 7 },
+  { name: "Network Security", level: 7 },
+  { name: "SDN", level: 7 },
 ] as Skill[];

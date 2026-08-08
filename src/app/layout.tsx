@@ -8,7 +8,8 @@ const font = Font({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Omar Afet",
-  description: "COOP Training at SDAIA · Self-Taught · King Saud University · AI · Cyber Security · Mathematics · Coding · Science · Quantum Computing · Fascinated by the strength and science of Time",
+  description:
+    "Founder & CEO at DRJAT · Ex-COOP at SDAIA · Fresh Grad at King Saud University · AI · Cyber Security · Coding · Quantum Computing · Fascinated by the science of Time",
   keywords: [
     "Omar Alenezi",
     "OmarAfet",
