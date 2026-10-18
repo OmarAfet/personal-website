@@ -103,7 +103,7 @@ export default [
   {
     title: "CoderHub",
     description: "Solutions to various coding challenges from coderhub.sa",
-    link: "https://github.com/OmarAfet/CoderHub",
+    link: "/coderhub",
     createdAt: "2022-12-15",
     archived: false,
   },
