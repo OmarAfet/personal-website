@@ -8,13 +8,20 @@ const ctfWriteups = process.env.CTF_WRITEUPS_ORIGIN;
 const nextConfig = {
   async rewrites() {
     if (!ctfWriteups) return [];
-    return [
-      { source: "/ctf-writeups", destination: `${ctfWriteups}/ctf-writeups` },
-      {
-        source: "/ctf-writeups/:path+",
-        destination: `${ctfWriteups}/ctf-writeups/:path+`,
-      },
-    ];
+    // beforeFiles, not the default afterFiles: Vercel rewrites a segment
+    // prefetch to /path.segments/<segment>.segment.rsc before afterFiles run,
+    // forwards that path with the prefetch headers, and the writeups app then
+    // adds the suffix a second time and returns 404. beforeFiles forwards the
+    // original path, so the writeups app adds the suffix once.
+    return {
+      beforeFiles: [
+        { source: "/ctf-writeups", destination: `${ctfWriteups}/ctf-writeups` },
+        {
+          source: "/ctf-writeups/:path+",
+          destination: `${ctfWriteups}/ctf-writeups/:path+`,
+        },
+      ],
+    };
   },
 };
 
