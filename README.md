@@ -31,7 +31,7 @@ Content lives in `src/data`, not in components. To add a project, add a host to
 | `npm run sync:stats` | Refreshes `src/data/stats.json` from FlagYard, bugbounty.sa and CoderHub, and counts the ctf-writeups pages. Prints every command it runs. Needs the logins of the three MCP repos. |
 | `python3 -I scripts/make-icons.py <png>` | Builds `favicon.ico`, `icon.png` and `apple-icon.png` from the KSA emblem |
 | `python3 -I scripts/emblem-art.py <png> 34 140` | Prints the emblem as half-block text for `src/data/art.ts` |
-| `python3 -I scripts/subset-font.py` | Rebuilds the 5 KB WOFF2 subset of the console font (needs `pip install fonttools brotli`) |
+| `python3 -I scripts/subset-font.py` | Rebuilds the 5 KB WOFF2 subset of the console font and `src/app/fonts/vga.css` (needs `pip install fonttools brotli`) |
 
 ## Decisions (2026-10-19)
 
@@ -46,7 +46,9 @@ Content lives in `src/data`, not in components. To add a project, add a host to
   [Ultimate Oldschool PC Font Pack](https://int10h.org/oldschool-pc-fonts/), CC BY-SA 4.0
   (credited on the page, license in `src/app/fonts`). The font has no Arabic, so console text is
   Latin. Pages load a 5 KB WOFF2 subset (ASCII, Latin-1, punctuation, arrows, box and block
-  characters); the full WOFF is only read at build time for the Open Graph image.
+  characters). Its fallbacks (`src/app/fonts/vga.css`) are local monospace fonts scaled to the
+  same 0.5 em advance, so nothing moves when the font arrives late (it once did: CLS 0.088). The
+  full WOFF is only read at build time for the Open Graph image.
 - **Headline:** "Offensive Security · CTF Player · Founder of DRJAT", to reuse on every profile.
 - **Order:** offensive security first. Black Hat MEA is listed before Madar: the harder event
   with more teams. CoderHub is near the end.
