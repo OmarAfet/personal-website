@@ -14,14 +14,6 @@ const PAGE_BY_PATH: Record<string, Page> = Object.fromEntries(
   pages.map((page) => [page === "index" ? "/" : `/${page}`, page]),
 );
 
-// Discovery for agents on the home page (RFC 8288 Link header).
-const HOME_LINKS = [
-  '</index.md>; rel="alternate"; type="text/markdown"',
-  '</llms.txt>; rel="describedby"; type="text/plain"',
-  '</docs>; rel="service-doc"; type="text/html"',
-  '</.well-known/mcp>; rel="service-desc"; type="application/json"',
-].join(", ");
-
 function varyAccept(headers: Headers) {
   const vary = headers.get("Vary");
   if (!vary) headers.set("Vary", "Accept");
@@ -83,15 +75,22 @@ export function proxy(request: NextRequest) {
 
   const response = NextResponse.next();
   varyAccept(response.headers);
-  if (pathname === "/") response.headers.set("Link", HOME_LINKS);
   return response;
 }
 
+// The matcher must be a literal: Next.js reads it at build time.
 export const config = {
   matcher: [
-    // Page paths (no file extension), minus Next internals, routes with their
-    // own handlers and the two zones served by other apps.
-    "/((?!_next/|_vercel/|md/|mcp|api/|\\.well-known/|ctf-writeups|coderhub)[^.]*)",
+    {
+      // Page paths (no file extension), minus Next internals, routes with
+      // their own handlers and the two zones served by other apps. Browsers
+      // send `Accept: text/html,…`, which always negotiates to HTML, so they
+      // skip the proxy and its cost on the first byte (about 40 ms on
+      // Vercel, 2026-10-19); agents, curl and `*/*` come here.
+      source:
+        "/((?!_next/|_vercel/|md/|mcp|api/|\\.well-known/|ctf-writeups|coderhub)[^.]*)",
+      missing: [{ type: "header", key: "accept", value: "text/html,.*" }],
+    },
     // The .md twins.
     "/(.*\\.md)",
   ],

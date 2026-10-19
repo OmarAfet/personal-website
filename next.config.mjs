@@ -22,6 +22,21 @@ const nextConfig = {
         source: "/:path((?!_next/|ctf-writeups|coderhub).*)",
         headers: [{ key: "Vary", value: "Accept" }],
       },
+      {
+        // Discovery for agents on the home page (RFC 8288 Link header).
+        source: "/",
+        headers: [
+          {
+            key: "Link",
+            value: [
+              '</index.md>; rel="alternate"; type="text/markdown"',
+              '</llms.txt>; rel="describedby"; type="text/plain"',
+              '</docs>; rel="service-doc"; type="text/html"',
+              '</.well-known/mcp>; rel="service-desc"; type="application/json"',
+            ].join(", "),
+          },
+        ],
+      },
     ];
   },
   async rewrites() {

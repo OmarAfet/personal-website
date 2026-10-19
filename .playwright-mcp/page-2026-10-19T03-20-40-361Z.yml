@@ -1,0 +1,332 @@
+- generic [active] [ref=f33e1]:
+  - generic [ref=f33e236]:
+    - link "Skip to content" [ref=f33e237] [cursor=pointer]:
+      - /url: "#main"
+    - banner [ref=f33e238]:
+      - generic [ref=f33e239]:
+        - generic [ref=f33e240]:
+          - link "Vercel" [ref=f33e241] [cursor=pointer]:
+            - /url: https://vercel.com
+          - link "Is Agentic home" [ref=f33e247] [cursor=pointer]:
+            - /url: /
+            - text: Is Agentic
+        - 'button "Copy command: npx is-agentic omarafet.vercel.app" [ref=f33e248] [cursor=pointer]':
+          - code [ref=f33e249]:
+            - generic [aria-hidden] [ref=f33e250]: $
+            - text: npx is-agentic omarafet.vercel.app
+    - main [ref=f33e256]:
+      - generic [ref=f33e258]:
+        - generic [ref=f33e259]:
+          - generic [ref=f33e260]:
+            - generic [ref=f33e261]:
+              - generic [ref=f33e262]:
+                - paragraph [ref=f33e263]: omarafet.vercel.app
+                - button "Share" [ref=f33e264] [cursor=pointer]
+              - heading "Important blockers remain" [level=1] [ref=f33e269]
+              - 'img "Is Agentic score: 69 out of 100" [ref=f33e271]':
+                - generic [ref=f33e276]:
+                  - generic [ref=f33e277]: "69"
+                  - generic [ref=f33e278]: / 100
+              - button "Prompt to improve" [ref=f33e280] [cursor=pointer]
+              - generic [ref=f33e281]:
+                - generic [ref=f33e282]:
+                  - text: Snapshot
+                  - time [ref=f33e283]: Oct 19, 2026, 2:54 AM UTC
+                - generic [aria-hidden] [ref=f33e284]: ·
+                - button "Rescan" [disabled] [ref=f33e285]
+            - generic [ref=f33e286]:
+              - group "Checks by site type" [ref=f33e287]:
+                - button "Docs & content" [pressed] [ref=f33e288] [cursor=pointer]
+                - button "Business" [ref=f33e289] [cursor=pointer]
+                - button "App" [ref=f33e290] [cursor=pointer]
+                - button "Commerce" [ref=f33e291] [cursor=pointer]
+                - link "Inferred Docs & content. Read site type documentation" [ref=f33e293] [cursor=pointer]:
+                  - /url: /docs#declare-site-type
+                  - generic [ref=f33e294]:
+                    - text: Inferred
+                    - strong [ref=f33e295]: Docs & content
+              - list [ref=f33e296]:
+                - listitem [ref=f33e297]:
+                  - link "Essential checks 4 of 6 checks passed 60 / 80 Open the checks behind this score" [ref=f33e298] [cursor=pointer]:
+                    - /url: "#score-evidence-essential"
+                    - generic [ref=f33e299]:
+                      - generic [ref=f33e300]: Essential checks
+                      - generic [ref=f33e301]: 4 of 6 checks passed
+                    - generic [ref=f33e302]:
+                      - text: 60 / 80
+                      - generic [aria-hidden] [ref=f33e303]: →
+                      - generic [ref=f33e304]: Open the checks behind this score
+                - listitem [ref=f33e305]:
+                  - link "Recommended for Docs & content 2 of 6 checks passed 8.2 / 20 Open the checks behind this score" [ref=f33e306] [cursor=pointer]:
+                    - /url: "#score-evidence-recommended"
+                    - generic [ref=f33e307]:
+                      - generic [ref=f33e308]: Recommended for Docs & content
+                      - generic [ref=f33e309]: 2 of 6 checks passed
+                    - generic [ref=f33e310]:
+                      - text: 8.2 / 20
+                      - generic [aria-hidden] [ref=f33e311]: →
+                      - generic [ref=f33e312]: Open the checks behind this score
+                - listitem [ref=f33e313]:
+                  - link "Bonus signals 7 positive, never required +1 Open the checks behind this score" [ref=f33e314] [cursor=pointer]:
+                    - /url: "#score-evidence-bonus"
+                    - generic [ref=f33e315]:
+                      - generic [ref=f33e316]: Bonus signals
+                      - generic [ref=f33e317]: 7 positive, never required
+                    - generic [ref=f33e318]:
+                      - text: "+1"
+                      - generic [aria-hidden] [ref=f33e319]: →
+                      - generic [ref=f33e320]: Open the checks behind this score
+          - status [ref=f33e562]:
+            - generic [ref=f33e563]: Refreshing the report. The previous completed score remains visible.
+        - region [ref=f33e322]:
+          - generic [ref=f33e323]:
+            - generic [ref=f33e324]:
+              - heading "Critical access needs attention" [level=2] [ref=f33e325]
+              - link "Link to this heading" [ref=f33e326] [cursor=pointer]:
+                - /url: "#access"
+            - paragraph [ref=f33e331]: These checks describe whether an ordinary agent can enter, read, and operate the public site.
+          - list [ref=f33e332]:
+            - listitem [ref=f33e333]:
+              - generic [aria-hidden] [ref=f33e334]: ✓
+              - generic [ref=f33e335]:
+                - paragraph [ref=f33e336]: Agents can reach the site
+                - paragraph [ref=f33e337]: Crawler access and bot defenses.
+              - generic [ref=f33e338]: 1 / 1 passed
+            - listitem [ref=f33e339]:
+              - generic [aria-hidden] [ref=f33e340]: ✓
+              - generic [ref=f33e341]:
+                - paragraph [ref=f33e342]: Core content is available
+                - paragraph [ref=f33e343]: Useful content remains accessible without a fragile browser-only path.
+              - generic [ref=f33e344]: 2 / 2 passed
+            - listitem [ref=f33e345]:
+              - generic [aria-hidden] [ref=f33e346]: ~
+              - generic [ref=f33e347]:
+                - paragraph [ref=f33e348]: Navigation fails safely
+                - paragraph [ref=f33e349]: Redirects and missing pages give agents a recoverable path.
+              - generic [ref=f33e350]: 1 / 2 passed
+            - listitem [ref=f33e351]:
+              - generic [aria-hidden] [ref=f33e352]: ✓
+              - generic [ref=f33e353]:
+                - paragraph [ref=f33e354]: Controls are understandable
+                - paragraph [ref=f33e355]: Forms and interactive controls expose usable names and structure.
+              - generic [ref=f33e356]: 3 / 3 passed
+        - region [ref=f33e357]:
+          - generic [ref=f33e358]:
+            - generic [ref=f33e359]:
+              - heading "Evaluated surfaces have material gaps" [level=2] [ref=f33e360]
+              - link "Link to this heading" [ref=f33e361] [cursor=pointer]:
+                - /url: "#surfaces"
+            - paragraph [ref=f33e366]: The public website is always evaluated. Optional surfaces appear when the scan finds positive evidence that they apply.
+          - generic [ref=f33e367]:
+            - generic [ref=f33e368]:
+              - generic [ref=f33e369]:
+                - generic [ref=f33e370]:
+                  - heading "Public website" [level=3] [ref=f33e371]
+                  - paragraph [ref=f33e372]: Needs work
+                - generic [ref=f33e373]: 52%
+              - paragraph [ref=f33e377]: Weighted across 16 applicable checks
+            - generic [ref=f33e378]:
+              - generic [ref=f33e379]:
+                - generic [ref=f33e380]:
+                  - heading "MCP" [level=3] [ref=f33e381]
+                  - paragraph [ref=f33e382]: Needs work
+                - generic [ref=f33e383]: 67%
+              - paragraph [ref=f33e387]: Weighted across 1 applicable check
+        - region [ref=f33e388]:
+          - generic [ref=f33e389]:
+            - generic [ref=f33e390]:
+              - generic [ref=f33e391]:
+                - heading "Fix these gaps first" [level=2] [ref=f33e392]
+                - link "Link to this heading" [ref=f33e393] [cursor=pointer]:
+                  - /url: "#fixes"
+              - paragraph [ref=f33e398]: Critical access gaps come first, followed by other applicable readiness gaps.
+            - list [ref=f33e399]:
+              - listitem [ref=f33e400]:
+                - generic [ref=f33e401]: "01"
+                - generic [ref=f33e402]:
+                  - generic [ref=f33e403]:
+                    - generic [ref=f33e404]:
+                      - heading "Agent-friendly 404s" [level=3] [ref=f33e405]
+                      - link "Link to this heading" [ref=f33e406] [cursor=pointer]:
+                        - /url: "#agent-friendly-404s"
+                    - generic [ref=f33e411]:
+                      - text: Critical access
+                      - button "What \"Critical access\" checks" [ref=f33e412]
+                  - generic [ref=f33e416]:
+                    - button "Copy fix for Agent-friendly 404s" [ref=f33e417]:
+                      - generic [ref=f33e418]: Copy fix
+                    - generic:
+                      - generic:
+                        - paragraph:
+                          - text: "Keep the correct HTTP 404 status. The remaining requirement is a Markdown error body when agents request Accept: text/markdown. Include at least 20 characters explaining the error and a link to your docs, sitemap, or llms.txt. Verify with"
+                          - code: "curl -sS -L -i -H 'Accept: text/markdown' https://yourdomain.com/some-path-that-does-not-exist"
+                          - text: ". Check both the final 404 status and the Markdown body with Content-Type: text/markdown. Checking the status alone does not verify the missing requirement."
+                    - generic [aria-hidden]:
+                      - generic: Copy fix
+                    - status [ref=f33e419]
+              - listitem [ref=f33e420]:
+                - generic [ref=f33e421]: "02"
+                - generic [ref=f33e422]:
+                  - generic [ref=f33e423]:
+                    - generic [ref=f33e424]:
+                      - heading "Markdown content negotiation (acceptmarkdown.com)" [level=3] [ref=f33e425]
+                      - link "Link to this heading" [ref=f33e426] [cursor=pointer]:
+                        - /url: "#markdown-content-negotiation-acceptmarkdown-com"
+                    - generic [ref=f33e431]:
+                      - text: Other readiness checks
+                      - button "What \"Other readiness checks\" checks" [ref=f33e432]
+                  - generic [ref=f33e436]:
+                    - button "Copy fix for Markdown content negotiation (acceptmarkdown.com)" [ref=f33e437]:
+                      - generic [ref=f33e438]: Copy fix
+                    - generic:
+                      - generic:
+                        - paragraph:
+                          - text: Enable Markdown negotiation on the scanned homepage. Supporting it only on
+                          - code: /docs
+                          - text: "or a separate .md URL does not satisfy this check. Requests with Accept: text/markdown must receive a nonempty Markdown body with Content-Type: text/markdown and Vary: Accept. Keep serving HTML for Accept: text/html. Adding Vary alone does not create a Markdown response. Verify both with"
+                          - code: "curl -sS -L -i -H 'Accept: text/markdown' https://yourdomain.com/"
+                          - text: and
+                          - code: "curl -sS -L -i -H 'Accept: text/html' https://yourdomain.com/"
+                          - text: ". Check the final response headers and body: Markdown with Vary: Accept for the first request, HTML for the second."
+                    - generic [aria-hidden]:
+                      - generic: Copy fix
+                    - status [ref=f33e439]
+              - listitem [ref=f33e440]:
+                - generic [ref=f33e441]: "03"
+                - generic [ref=f33e442]:
+                  - generic [ref=f33e443]:
+                    - generic [ref=f33e444]:
+                      - heading "JSON-LD structured data" [level=3] [ref=f33e445]
+                      - link "Link to this heading" [ref=f33e446] [cursor=pointer]:
+                        - /url: "#json-ld-structured-data"
+                    - generic [ref=f33e451]:
+                      - text: Other readiness checks
+                      - button "What \"Other readiness checks\" checks" [ref=f33e452]
+                  - generic [ref=f33e456]:
+                    - button "Copy fix for JSON-LD structured data" [ref=f33e457]:
+                      - generic [ref=f33e458]: Copy fix
+                    - generic:
+                      - generic:
+                        - paragraph: Add JSON-LD structured data to your homepage using the identity type that matches your site - SoftwareApplication for products, Organization or LocalBusiness for companies, Person for personal sites, Article for blogs - with name, description, url, and type-appropriate fields (offers, sameAs, author) so AI can parse your identity programmatically.
+                    - generic [aria-hidden]:
+                      - generic: Copy fix
+                    - status [ref=f33e459]
+              - listitem [ref=f33e460]:
+                - generic [ref=f33e461]: "04"
+                - generic [ref=f33e462]:
+                  - generic [ref=f33e463]:
+                    - generic [ref=f33e464]:
+                      - heading "Sitemap exists" [level=3] [ref=f33e465]
+                      - link "Link to this heading" [ref=f33e466] [cursor=pointer]:
+                        - /url: "#sitemap-exists"
+                    - generic [ref=f33e471]:
+                      - text: Other readiness checks
+                      - button "What \"Other readiness checks\" checks" [ref=f33e472]
+                  - generic [ref=f33e476]:
+                    - button "Copy fix for Sitemap exists" [ref=f33e477]:
+                      - generic [ref=f33e478]: Copy fix
+                    - generic:
+                      - generic:
+                        - paragraph:
+                          - text: Add a valid XML sitemap at
+                          - code: /sitemap.xml
+                          - text: listing all indexable URLs. Include lastmod dates and keep it under 50MB.
+                    - generic [aria-hidden]:
+                      - generic: Copy fix
+                    - status [ref=f33e479]
+              - listitem [ref=f33e480]:
+                - generic [ref=f33e481]: "05"
+                - generic [ref=f33e482]:
+                  - generic [ref=f33e483]:
+                    - generic [ref=f33e484]:
+                      - heading "Trust anchor pages" [level=3] [ref=f33e485]
+                      - link "Link to this heading" [ref=f33e486] [cursor=pointer]:
+                        - /url: "#trust-anchor-pages"
+                    - generic [ref=f33e491]:
+                      - text: Other readiness checks
+                      - button "What \"Other readiness checks\" checks" [ref=f33e492]
+                  - generic [ref=f33e496]:
+                    - button "Copy fix for Trust anchor pages" [ref=f33e497]:
+                      - generic [ref=f33e498]: Copy fix
+                    - generic:
+                      - generic:
+                        - paragraph:
+                          - text: Publish real
+                          - code: /about
+                          - text: ","
+                          - code: /contact
+                          - text: ", and"
+                          - code: /privacy
+                          - text: pages with at least 500 characters of content each. These are the pages AI agents check to verify your business is legitimate before recommending you.
+                    - generic [aria-hidden]:
+                      - generic: Copy fix
+                    - status [ref=f33e499]
+        - region [ref=f33e500]:
+          - generic [ref=f33e501]:
+            - generic [ref=f33e502]:
+              - heading "Audit the checks behind the score" [level=2] [ref=f33e503]
+              - link "Link to this heading" [ref=f33e504] [cursor=pointer]:
+                - /url: "#score-evidence"
+            - paragraph [ref=f33e509]: Checks are grouped by relevance for Docs & content sites.
+          - generic [ref=f33e510]:
+            - group [ref=f33e511]:
+              - generic "Essential checks4 of 6 passed" [ref=f33e512] [cursor=pointer]
+            - group [ref=f33e513]:
+              - generic "Recommended for Docs & content2 of 6 passed" [ref=f33e514] [cursor=pointer]
+            - group [ref=f33e515]:
+              - generic "Bonus signals7 positive" [ref=f33e516] [cursor=pointer]
+        - region [ref=f33e517]:
+          - generic [ref=f33e518]:
+            - generic [ref=f33e519]:
+              - heading "Task" [level=2] [ref=f33e520]
+              - link "Link to this heading" [ref=f33e521] [cursor=pointer]:
+                - /url: "#task"
+            - paragraph [ref=f33e526]: What does omarafet.vercel.app do and who is it for? Explain it back to me.
+          - generic [ref=f33e565]:
+            - paragraph [ref=f33e566]: Fetching /
+            - paragraph [ref=f33e568]:
+              - generic [ref=f33e569]: 2 steps
+              - generic [ref=f33e570]: 1 reasoning step
+            - group "Agent trajectory" [ref=f33e571]:
+              - generic [ref=f33e573]:
+                - img "Reasoning step, hover for details" [ref=f33e574]
+                - generic "fetch home, in flight" [ref=f33e583]: home
+        - region [ref=f33e529]:
+          - generic [ref=f33e530]:
+            - paragraph [ref=f33e531]: Sign me up for Vercel product updates and marketing emails.
+            - paragraph [ref=f33e532]:
+              - text: Unsubscribe anytime.
+              - link "Privacy Notice" [ref=f33e533] [cursor=pointer]:
+                - /url: https://vercel.com/legal/privacy-notice
+          - generic [ref=f33e535]:
+            - generic [ref=f33e536]: Email
+            - textbox "Email" [ref=f33e537]
+            - button "Sign up" [ref=f33e538] [cursor=pointer]
+        - paragraph [ref=f33e540]:
+          - text: "Source:"
+          - link "Ora API" [ref=f33e541] [cursor=pointer]:
+            - /url: https://ora.ai/docs
+    - contentinfo [ref=f33e543]:
+      - generic [ref=f33e544]:
+        - paragraph [ref=f33e545]:
+          - generic [ref=f33e546]: © 2026 Vercel.
+          - generic [ref=f33e547]:
+            - text: Powered by
+            - link "Ora" [ref=f33e548] [cursor=pointer]:
+              - /url: https://ora.ai
+            - text: .
+        - navigation "Footer" [ref=f33e549]:
+          - link "About" [ref=f33e550] [cursor=pointer]:
+            - /url: /about
+          - link "Methodology" [ref=f33e551] [cursor=pointer]:
+            - /url: /methodology
+          - link "Docs" [ref=f33e552] [cursor=pointer]:
+            - /url: /docs
+          - link "Privacy" [ref=f33e553] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms" [ref=f33e554] [cursor=pointer]:
+            - /url: /terms
+          - link "Contact" [ref=f33e555] [cursor=pointer]:
+            - /url: /contact
+        - button "Toggle color theme" [ref=f33e557] [cursor=pointer]
+  - alert [ref=f33e235]: Important blockers remain

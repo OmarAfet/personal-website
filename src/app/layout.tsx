@@ -8,10 +8,11 @@ import "./globals.css";
 
 // IBM VGA 8x16, the PC and Linux console font, from VileR's Ultimate Oldschool
 // PC Font Pack (CC BY-SA 4.0, license next to the file). Chosen 2026-10-19 for
-// the Linux console look. display "block": a fallback font has other
-// metrics, and the swap would shift every column of the page.
+// the Linux console look. A 5 KB subset (scripts/subset-font.py), since every
+// page waits for it. display "block": a fallback font has other metrics, and
+// the swap would shift every column of the page.
 const vga = localFont({
-  src: "./fonts/WebPlus_IBM_VGA_8x16.woff",
+  src: "./fonts/WebPlus_IBM_VGA_8x16-subset.woff2",
   variable: "--font-vga",
   display: "block",
   fallback: ["ui-monospace", "Menlo", "Consolas", "monospace"],
