@@ -1,166 +1,618 @@
-@import "tailwindcss";
-
-@custom-variant dark (&:is(.dark *));
+/* One stylesheet for a Linux console (tty) on a fixed 8x16 cell grid.
+   Widths are in ch: in the VGA font every character is exactly 1ch wide, so a
+   column of 10ch holds 10 characters. Colours are the 16-colour VGA palette the
+   Linux console uses, except dim text: VGA dark gray #555 has 2.8:1 contrast
+   on black, so text uses #808080 (5.3:1) and #555 only shades the banner.
+   Bright blue is not used for text (4.1:1). */
 
 :root {
-  --radius: 0.625rem;
-  /* Warm paper, not pure white. */
-  --background: oklch(0.988 0.004 95);
-  --foreground: oklch(0.19 0.012 265);
-  --card: oklch(0.972 0.005 95);
-  --card-foreground: oklch(0.19 0.012 265);
-  --popover: oklch(0.988 0.004 95);
-  --popover-foreground: oklch(0.19 0.012 265);
-  --primary: oklch(0.24 0.014 265);
-  --primary-foreground: oklch(0.985 0.004 95);
-  --secondary: oklch(0.945 0.006 95);
-  --secondary-foreground: oklch(0.24 0.014 265);
-  --muted: oklch(0.945 0.006 95);
-  --muted-foreground: oklch(0.505 0.014 265);
-  --accent: oklch(0.945 0.006 95);
-  --accent-foreground: oklch(0.24 0.014 265);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.885 0.008 265);
-  --input: oklch(0.885 0.008 265);
-  --ring: oklch(0.58 0.13 62);
-  /* The time rail. The one place colour is spent. */
-  --time: oklch(0.58 0.13 62);
-  --rail-base: oklch(0.87 0.006 265);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  color-scheme: dark;
+  --black: #000;
+  --gray: #aaa;
+  --white: #fff;
+  --dim: #808080;
+  --shade: #555;
+  --red: #f55;
+  --green: #0a0;
+  --green-hi: #5f5;
+  --yellow: #ff5;
+  --brown: #a50;
+  --cyan: #5ff;
+  --magenta: #f5f;
+  --blue: #55f;
+  --row: 16px;
 }
 
-.dark {
-  /* Deep ink with a trace of blue, so it reads as considered rather than default black. */
-  --background: oklch(0.155 0.009 265);
-  --foreground: oklch(0.968 0.005 95);
-  --card: oklch(0.195 0.01 265);
-  --card-foreground: oklch(0.968 0.005 95);
-  --popover: oklch(0.195 0.01 265);
-  --popover-foreground: oklch(0.968 0.005 95);
-  --primary: oklch(0.92 0.005 95);
-  --primary-foreground: oklch(0.195 0.01 265);
-  --secondary: oklch(0.255 0.011 265);
-  --secondary-foreground: oklch(0.968 0.005 95);
-  --muted: oklch(0.255 0.011 265);
-  --muted-foreground: oklch(0.665 0.014 265);
-  --accent: oklch(0.255 0.011 265);
-  --accent-foreground: oklch(0.968 0.005 95);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 9%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.79 0.125 78);
-  --time: oklch(0.79 0.125 78);
-  --rail-base: oklch(0.325 0.012 265);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Theme switches should ease; nothing else needs a global transition. */
+html {
+  background: var(--black);
+  scroll-padding-bottom: calc(var(--row) * 3);
+}
+
 body {
-  transition:
-    background-color 300ms ease,
-    color 300ms ease;
+  min-height: 100vh;
+  font:
+    var(--row) / var(--row) var(--font-vga),
+    ui-monospace,
+    Menlo,
+    Consolas,
+    monospace;
+  color: var(--gray);
+  background: var(--black);
+  font-synthesis: none;
+  font-variant-ligatures: none;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-/* Arabic and Latin sit in the same left-aligned column. 'plaintext' resolves
-   each run's direction from its own first strong character, which keeps
-   terminal punctuation on the correct side without flipping the layout. */
-.bidi {
-  unicode-bidi: plaintext;
+/* `setfont ter-132b` in the shell doubles every cell, as that command does on
+   a Linux console on a HiDPI screen. */
+html.big {
+  --row: 32px;
+}
+
+h1,
+h2,
+h3,
+p,
+pre,
+ul,
+ol,
+dl,
+dd,
+dt,
+figure,
+summary,
+kbd,
+input,
+button {
+  font: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+b,
+strong {
+  font-weight: inherit;
+  color: var(--white);
+}
+
+/* Underlined, as terminals underline hyperlinks: colour alone does not set a
+   link apart from the gray text around it (1.9:1). */
+a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus-visible,
+.btn:hover,
+.btn:focus-visible {
+  color: var(--black);
+  background: var(--cyan);
+  outline: none;
+}
+
+.btn {
+  color: var(--cyan);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+:focus-visible {
+  outline: 1px solid var(--white);
+  outline-offset: 0;
+}
+
+::selection {
+  color: var(--black);
+  background: var(--gray);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.tty {
+  padding: var(--row) 2ch calc(var(--row) * 4);
+}
+
+pre,
+.pre {
+  white-space: pre;
+}
+
+p,
+li,
+dd,
+dt,
+.line {
+  min-height: var(--row);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.gap {
+  margin-top: var(--row);
+}
+
+.dim {
+  color: var(--dim);
+}
+
+.hi {
+  color: var(--white);
+}
+
+.ok {
+  color: var(--green-hi);
+}
+
+.warn {
+  color: var(--yellow);
+}
+
+.bad {
+  color: var(--red);
+}
+
+/* ---- prompt and typed commands ---- */
+
+.ps1 .u {
+  color: var(--red);
+}
+
+.ps1 .w {
+  color: var(--white);
+}
+
+.cmd {
+  color: var(--white);
+  white-space: pre;
+}
+
+.step {
+  margin-top: var(--row);
+  scroll-margin-top: var(--row);
+}
+
+.out {
+  margin-top: 0;
+}
+
+/* Hidden until the command above it has been typed (only with JavaScript:
+   without it every step prints at once). Hidden, not removed, so nothing
+   moves when a step prints. */
+html.js .step:not(.typing, .done, .auto) {
+  visibility: hidden;
+}
+
+html.js .step.typing .out {
+  visibility: hidden;
+}
+
+html.js .step:not(.done) .cmd {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  width: 0;
+}
+
+html.js .step.typing .cmd {
+  animation: type var(--t, 0.4s) steps(var(--n)) forwards;
+}
+
+html.js .step.typing h2::after {
+  content: "";
+  display: inline-block;
+  width: 1ch;
+  height: var(--row);
+  vertical-align: top;
+  background: var(--gray);
+}
+
+@keyframes type {
+  to {
+    width: calc(var(--n) * 1ch);
+  }
+}
+
+html.js:not(.booted) .step.auto h2 {
+  animation: appear 1ms var(--d) both;
+}
+
+html.js:not(.booted) .step.auto .cmd {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  width: 0;
+  animation: type var(--t) steps(var(--n)) var(--d) forwards;
+}
+
+html.js:not(.booted) .step.auto .out {
+  animation: appear 1ms calc(var(--d) + var(--t)) both;
+}
+
+/* ---- boot log, login and motd ---- */
+
+html.js:not(.booted) .boot > *,
+html.js:not(.booted) .motd {
+  animation: appear 1ms var(--d) both;
+}
+
+/* Lines wait at 1% opacity, not hidden: the browser paints them with the
+   first frame, so Largest Contentful Paint is that frame and not the end of
+   the boot animation (Lighthouse mobile: 2.6 s -> 2.3 s locally, 2026-10-19).
+   At 1% on black they cannot be seen. */
+@keyframes appear {
+  from {
+    opacity: 0.01;
+  }
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--row) 2ch;
+  margin: var(--row) 0;
+  color: var(--white);
+}
+
+.banner .s {
+  color: var(--shade);
+}
+
+/* ---- fastfetch ---- */
+
+.ff {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--row) 3ch;
+}
+
+.ff .logo {
+  color: var(--green);
+}
+
+.ff .k {
+  color: var(--green-hi);
+}
+
+.ff dl > div > * {
+  display: inline;
+}
+
+.ff .colors {
+  display: flex;
+  flex-wrap: wrap;
+  width: 24ch;
+}
+
+.ff .colors span {
+  width: 3ch;
+  height: var(--row);
+}
+
+/* ---- key/value output (flagyard, bbsa, coderhub, links) ---- */
+
+.kv {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 2ch;
+}
+
+.kv dt {
+  color: var(--dim);
+}
+
+.kv > div {
+  display: contents;
+}
+
+.labs li {
+  display: grid;
+  grid-template-columns: minmax(0, 22ch) 7ch 8ch 8ch;
+  column-gap: 1ch;
+}
+
+.labs .num {
+  text-align: right;
+}
+
+@media (max-width: 40rem) {
+  .labs li {
+    grid-template-columns: minmax(0, 22ch) 7ch 8ch;
+  }
+
+  .labs .pts {
+    display: none;
+  }
+}
+
+.event + .event {
+  margin-top: var(--row);
+}
+
+.event .kv {
+  padding-left: 2ch;
+}
+
+/* ---- nmap ---- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1ch;
+}
+
+.filters .btn {
+  color: var(--gray);
+}
+
+.filters .btn[aria-pressed="true"] {
+  color: var(--black);
+  background: var(--gray);
+}
+
+.ports > li,
+.ports-head {
+  display: grid;
+  grid-template-columns: 10ch 9ch 16ch minmax(0, 1fr);
+}
+
+.ports > li {
+  margin-top: var(--row);
+}
+
+.ports .script {
+  grid-column: 1 / -1;
+}
+
+.ports .script > .line {
+  display: block;
+}
+
+.state-open {
+  color: var(--green-hi);
+}
+
+.state-filtered {
+  color: var(--yellow);
+}
+
+.state-closed {
+  color: var(--red);
+}
+
+@media (max-width: 40rem) {
+  .ports > li,
+  .ports-head {
+    grid-template-columns: 10ch 9ch minmax(0, 1fr);
+  }
+
+  .ports .ver {
+    grid-column: 1 / -1;
+  }
+
+  .ports-head .ver {
+    display: none;
+  }
+}
+
+/* ---- two-line records: last, achievements ---- */
+
+.rec > li + li {
+  margin-top: var(--row);
+}
+
+.rec .sub {
+  padding-left: 4ch;
+}
+
+.log h3 {
+  margin-top: var(--row);
+  color: var(--dim);
+}
+
+.mark-plus {
+  color: var(--green-hi);
+}
+
+.mark-star {
+  color: var(--cyan);
+}
+
+/* ---- ls ---- */
+
+.ls {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2ch;
+}
+
+.ls-l li,
+.ls-l summary {
+  display: grid;
+  grid-template-columns: 11ch 3ch 5ch 14ch 11ch minmax(0, 1fr);
+}
+
+.ls-l summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.ls-l summary::-webkit-details-marker {
+  display: none;
+}
+
+.ls-l details[open] .when-closed,
+.ls-l details:not([open]) .when-open {
+  display: none;
+}
+
+.dir {
+  color: var(--blue);
+  filter: brightness(1.35);
+}
+
+/* On a phone: "date issuer" on one line, the file name under it. */
+@media (max-width: 40rem) {
+  .ls-l li,
+  .ls-l summary {
+    grid-template-columns: 11ch minmax(0, 1fr);
+  }
+
+  .ls-l .perm,
+  .ls-l .nlink,
+  .ls-l .owner {
+    display: none;
+  }
+
+  .ls-l .date {
+    order: -1;
+  }
+
+  .ls-l .name {
+    grid-column: 1 / -1;
+    padding-left: 2ch;
+  }
+}
+
+/* ---- interactive shell ---- */
+
+.shell .input {
+  display: flex;
+}
+
+.shell input {
+  flex: 1;
+  min-width: 0;
+  color: var(--white);
+  background: transparent;
+  border: 0;
+  outline: none;
+  caret-color: var(--white);
+  border-radius: 0;
+  padding: 0;
+  height: var(--row);
+}
+
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  height: var(--row);
+  vertical-align: top;
+  background: var(--gray);
+  animation: blink 1s steps(1) infinite;
+}
+
+.shell:focus-within .cursor {
+  display: none;
+}
+
+@keyframes blink {
+  50% {
+    visibility: hidden;
+  }
+}
+
+/* ---- tmux status line ---- */
+
+.tmux {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 2ch;
+  padding-bottom: env(safe-area-inset-bottom);
+  color: var(--black);
+  background: var(--green);
+  white-space: pre;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tmux ol,
+.tmux li,
+.tmux .right {
+  flex: none;
+}
+
+.tmux ol {
+  display: flex;
+}
+
+.tmux button {
+  color: var(--black);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding-right: 1ch;
+}
+
+.tmux button[aria-current="true"] {
+  color: var(--green-hi);
+  background: var(--black);
+}
+
+.tmux .right {
+  padding-right: 1ch;
+}
+
+@media (max-width: 40rem) {
+  .tmux .right {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
     scroll-behavior: auto !important;
   }
 }
 
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--color-background));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--color-border));
-}
-
-@theme inline {
-  --font-sans: var(--font-plex-sans);
-  --font-mono: var(--font-plex-mono);
-  --color-time: var(--time);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+@media print {
+  html.js .step,
+  html.js .step .out,
+  html.js .boot > *,
+  html.js .motd {
+    visibility: visible !important;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  html.js .step .cmd {
+    width: auto !important;
+  }
+
+  .tmux,
+  .shell {
+    display: none;
   }
 }

@@ -1,0 +1,166 @@
+{
+  "fetchedAt": "2026-10-19",
+  "flagyard": {
+    "username": "OmarAfet",
+    "url": "https://flagyard.com/profile/7820/overview",
+    "rank": 56,
+    "players": 7551,
+    "points": 18280,
+    "level": "Guru",
+    "firstBloods": 1,
+    "solves": 131,
+    "byDifficulty": {
+      "easy": 77,
+      "hard": 27,
+      "insane": 10,
+      "medium": 42
+    },
+    "labs": [
+      {
+        "name": "Forensics",
+        "solved": 26,
+        "challenges": 26,
+        "points": 5435,
+        "maxPoints": 5435
+      },
+      {
+        "name": "Reverse Engineering",
+        "solved": 19,
+        "challenges": 19,
+        "points": 3240,
+        "maxPoints": 3240
+      },
+      {
+        "name": "Crypto",
+        "solved": 18,
+        "challenges": 18,
+        "points": 3100,
+        "maxPoints": 3100
+      },
+      {
+        "name": "Web",
+        "solved": 15,
+        "challenges": 15,
+        "points": 2400,
+        "maxPoints": 2400
+      },
+      {
+        "name": "PWN",
+        "solved": 6,
+        "challenges": 6,
+        "points": 1120,
+        "maxPoints": 1120
+      },
+      {
+        "name": "Competitive Reversing",
+        "solved": 4,
+        "challenges": 4,
+        "points": 1100,
+        "maxPoints": 1100
+      },
+      {
+        "name": "Competitive Crypto",
+        "solved": 4,
+        "challenges": 4,
+        "points": 1000,
+        "maxPoints": 1000
+      },
+      {
+        "name": "Hardware",
+        "solved": 1,
+        "challenges": 1,
+        "points": 300,
+        "maxPoints": 300
+      },
+      {
+        "name": "Discord",
+        "solved": 1,
+        "challenges": 1,
+        "points": 50,
+        "maxPoints": 50
+      },
+      {
+        "name": "CyberNights CTF 2025",
+        "solved": 20,
+        "challenges": 23,
+        "points": 20,
+        "maxPoints": 23
+      },
+      {
+        "name": "CyberNights CTF 2024",
+        "solved": 15,
+        "challenges": 16,
+        "points": 15,
+        "maxPoints": 16
+      }
+    ],
+    "badges": [
+      "Reverse Hacker",
+      "Reverse Master",
+      "Web Hacker",
+      "Web Master",
+      "Crypto Hacker",
+      "Crypto Master",
+      "PWN Hacker"
+    ],
+    "events": [
+      {
+        "name": "Black Hat MEA CTF 2026",
+        "stage": "Qualifier",
+        "end": "2026-09-06",
+        "team": "M7_",
+        "captain": true,
+        "rank": 129,
+        "teams": 1762,
+        "points": 1500,
+        "teamSolves": 15,
+        "challenges": 15,
+        "mySolves": 7,
+        "myPoints": 700,
+        "myFirstBloods": 0,
+        "url": "https://flagyard.com/events/3468f495-a92c-498b-90c2-994dfb99ea0b"
+      },
+      {
+        "name": "Madar Al-Himaya CTF",
+        "stage": "Qualifier",
+        "end": "2026-10-18",
+        "team": "Vexon",
+        "captain": false,
+        "rank": 6,
+        "teams": 211,
+        "points": 1965,
+        "teamSolves": 8,
+        "challenges": 8,
+        "mySolves": 6,
+        "myPoints": 1395,
+        "myFirstBloods": 2,
+        "url": "https://flagyard.com/events/01a0e83b-fc2e-7f05-92ab-8f70e84c8739"
+      }
+    ]
+  },
+  "bugbounty": {
+    "verified": true,
+    "valid": 7,
+    "severity": {
+      "critical": 1,
+      "high": 4,
+      "medium": 2
+    },
+    "accepted": 3,
+    "duplicates": 3,
+    "downgraded": 1,
+    "fixed": 2,
+    "triage": 1
+  },
+  "coderhub": {
+    "challenges": 215,
+    "solved": {
+      "Python": 180,
+      "JavaScript": 87
+    }
+  },
+  "writeups": {
+    "challenges": 182,
+    "solved": 158
+  }
+}

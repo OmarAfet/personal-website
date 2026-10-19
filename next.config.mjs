@@ -11,6 +11,19 @@ const zones = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // The whole stylesheet is a few KB, so it ships inside the HTML instead of
+  // as a render-blocking request (Lighthouse, 2026-10-19: about 120 ms).
+  experimental: { inlineCss: true },
+  // Pages answer in HTML or Markdown by Accept (src/proxy.ts), so caches must
+  // key on it. Next.js sets its own Vary on pages; this adds Accept to it.
+  async headers() {
+    return [
+      {
+        source: "/:path((?!_next/|ctf-writeups|coderhub).*)",
+        headers: [{ key: "Vary", value: "Accept" }],
+      },
+    ];
+  },
   async rewrites() {
     // beforeFiles, not the default afterFiles: Vercel rewrites a segment
     // prefetch to /path.segments/<segment>.segment.rsc before afterFiles run,
