@@ -86,9 +86,12 @@ export const config = {
       // their own handlers and the two zones served by other apps. Browsers
       // send `Accept: text/html,…`, which always negotiates to HTML, so they
       // skip the proxy and its cost on the first byte (about 40 ms on
-      // Vercel, 2026-10-19); agents, curl and `*/*` come here.
+      // Vercel, 2026-10-19); agents, curl and `*/*` come here. Next.js adds
+      // an optional `.json` suffix to every matcher, so /openapi.json would
+      // match as the page /openapi; it and /api (no slash) are excluded by
+      // name, or `Accept: application/json` gets a 406.
       source:
-        "/((?!_next/|_vercel/|md/|mcp|api/|\\.well-known/|ctf-writeups|coderhub)[^.]*)",
+        "/((?!_next/|_vercel/|md/|mcp|api(?:/|$)|openapi\\.json|\\.well-known/|ctf-writeups|coderhub)[^.]*)",
       missing: [{ type: "header", key: "accept", value: "text/html,.*" }],
     },
     // The .md twins.

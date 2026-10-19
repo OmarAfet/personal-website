@@ -20,9 +20,22 @@ export function docMetadata(page: string, doc: Doc): Metadata {
   };
 }
 
+// Heading ids, so links like /docs#errors (the API's problem type) land on
+// their section.
+const slug = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
 function Part({ block }: { block: Block }) {
   if ("p" in block) return <p className="gap">{block.p}</p>;
-  if ("h" in block) return <h2 className="gap dim"># {block.h}</h2>;
+  if ("h" in block)
+    return (
+      <h2 id={slug(block.h)} className="gap dim">
+        # {block.h}
+      </h2>
+    );
   if ("code" in block) return <p className="gap hi">$ {block.code}</p>;
   return (
     <ul className="gap">

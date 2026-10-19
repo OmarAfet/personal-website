@@ -1,0 +1,9 @@
+import { openapi } from "@/lib/openapi";
+
+export const dynamic = "force-static";
+
+export function GET() {
+  return Response.json(openapi(), {
+    headers: { "Access-Control-Allow-Origin": "*" },
+  });
+}

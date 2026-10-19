@@ -82,6 +82,11 @@ Content lives in `src/data`, not in components. To add a project, add a host to
 - **MCP server:** `/mcp`, Streamable HTTP, stateless, six read-only tools and the Markdown pages
   as resources (`src/app/mcp/route.ts`, `src/lib/mcp.ts`). Server card at `/.well-known/mcp`.
   Hand-written, no SDK: it only answers JSON-RPC over POST.
+- **REST API:** `/api/v1/<resource>`, GET only, the same data as the MCP tools; lists paginate
+  with `limit` and `cursor`; errors are `application/problem+json` (`src/lib/api.ts`). The OpenAPI
+  3.1 spec (`/openapi.json`) is built from the same resource table (`src/lib/openapi.ts`), so the
+  two cannot drift; `/.well-known/api-catalog` (RFC 9727) points to it. Added because the scan
+  scored 83: its essential checks want an OpenAPI spec and JSON errors once a site has docs.
 - **Trust pages:** `/about`, `/contact`, `/privacy`, `/docs` (`src/data/pages.ts`, one source for
   the HTML and the Markdown).
 - **JSON-LD:** WebSite, ProfilePage, Person and Organization (DRJAT, with its public support

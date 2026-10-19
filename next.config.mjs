@@ -32,6 +32,8 @@ const nextConfig = {
               '</index.md>; rel="alternate"; type="text/markdown"',
               '</llms.txt>; rel="describedby"; type="text/plain"',
               '</docs>; rel="service-doc"; type="text/html"',
+              '</openapi.json>; rel="service-desc"; type="application/openapi+json"',
+              '</.well-known/api-catalog>; rel="api-catalog"',
               '</.well-known/mcp>; rel="service-desc"; type="application/json"',
             ].join(", "),
           },

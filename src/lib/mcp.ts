@@ -219,7 +219,7 @@ const titles: Record<Page, string> = {
   about: "About Omar Afet",
   contact: "Contact Omar Afet",
   privacy: "Privacy of omarafet.vercel.app",
-  docs: "Developer docs: Markdown, llms.txt and the MCP server",
+  docs: "Developer docs: REST API, MCP server and Markdown",
 };
 
 export const resources = pages.map((page) => ({

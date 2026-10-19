@@ -20,7 +20,7 @@ Personal site of ${profile.name} (@${profile.handle}): CTF results (FlagYard #${
 - Use it when you need facts about Omar Afet: who he is, his offensive security and CTF record, his projects and certificates, or how to contact him.
 - Use it to cite his FlagYard rank, his teams' CTF results or his bug bounty counts; report details are private and not here.
 - Do not use it for DRJAT product questions or support: use https://drjat.sa.
-- How to call it: fetch any page with \`Accept: text/markdown\` or its \`.md\` URL, or connect an MCP client to ${url("/mcp")} (Streamable HTTP, no auth, read-only tools). Start with the tool \`omarafet_get_profile\`.
+- How to call it: fetch any page with \`Accept: text/markdown\` or its \`.md\` URL, call the REST API at ${url("/api/v1")} (OpenAPI: ${url("/openapi.json")}), or connect an MCP client to ${url("/mcp")} (Streamable HTTP, no auth, read-only tools). Start with \`omarafet_get_profile\` or GET /api/v1/profile.
 
 ## Pages
 
@@ -28,7 +28,12 @@ Personal site of ${profile.name} (@${profile.handle}): CTF results (FlagYard #${
 - [About](${url("/about.md")}): who Omar is
 - [Contact](${url("/contact.md")}): how to reach him
 - [Privacy](${url("/privacy.md")}): what this site collects
-- [Developer docs](${url("/docs.md")}): Markdown, llms.txt and the MCP server
+- [Developer docs](${url("/docs.md")}): REST API, MCP server, Markdown and llms.txt
+
+## API
+
+- [OpenAPI spec](${url("/openapi.json")}): read-only REST API at ${url("/api/v1")} (profile, ctf, bug-bounty, projects, achievements, certificates, badges), no auth
+- [API catalog](${url("/.well-known/api-catalog")}) (RFC 9727)
 
 ## MCP
 

@@ -125,12 +125,35 @@ const tools = [
 ];
 
 const docs: Doc = {
-  title: "Developer docs: Markdown, llms.txt and the MCP server",
+  title: "Developer docs: REST API, MCP server and Markdown",
   description:
-    "How agents read omarafet.vercel.app: Markdown content negotiation, llms.txt and a read-only MCP server.",
+    "How programs and agents read omarafet.vercel.app: a read-only REST API with an OpenAPI spec, an MCP server, Markdown pages and llms.txt.",
   blocks: [
     {
-      p: "Everything here is public and read-only. There is no API key and no sign-in.",
+      p: "Everything here is public and read-only. Authentication: none, so there is no API key and no sign-in. Responses allow any origin (CORS).",
+    },
+    { h: "REST API" },
+    {
+      p: "Base URL: https://omarafet.vercel.app/api/v1. OpenAPI 3.1 spec: /openapi.json. API catalog (RFC 9727): /.well-known/api-catalog. Every endpoint is GET.",
+    },
+    {
+      list: [
+        { text: "/api/v1/profile: who Omar is, roles, interests, links" },
+        { text: "/api/v1/ctf: FlagYard rank, labs, CTF event results" },
+        { text: "/api/v1/bug-bounty: valid findings by severity" },
+        { text: "/api/v1/projects: projects, ?tag= (security, ai, rust ...)" },
+        { text: "/api/v1/achievements: results and events, ?section=" },
+        { text: "/api/v1/certificates: certificates, ?folder=" },
+        { text: "/api/v1/badges: FlagYard and Tuwaiq badges" },
+      ],
+    },
+    {
+      p: "Lists are paginated: ?limit= (1 to 100, default 50) and ?cursor= from next_cursor; a Link header with rel=next points to the next page. Versioning: the version is in the path; a breaking change would go to /api/v2, and /api/v1 keeps its shape.",
+    },
+    { code: "curl https://omarafet.vercel.app/api/v1/projects?tag=security" },
+    { h: "Errors" },
+    {
+      p: "API errors are application/problem+json (RFC 9457) with a code and a hint: not_found (404), invalid_parameter (400), invalid_cursor (400), method_not_allowed (405: the API is read-only).",
     },
     { h: "Markdown" },
     {
