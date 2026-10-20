@@ -35,12 +35,10 @@ export default function Nmap({
   hosts,
   filters,
   started,
-  uptime,
 }: {
   hosts: Host[];
   filters: string[];
   started: string;
-  uptime: number;
 }) {
   const [filter, setFilter] = useState<string | null>(null);
   const match = (h: Host) => !filter || h.tags.includes(filter);
@@ -53,7 +51,7 @@ export default function Nmap({
         {started}
       </p>
       <p>Nmap scan report for omarafet (omarafet.vercel.app)</p>
-      <p>Host is up ({uptime} years uptime).</p>
+      <p>Host is up (0.042s latency).</p>
       <p>
         Not shown: older and private repositories at{" "}
         <a href="https://github.com/OmarAfet">github.com/OmarAfet</a>
@@ -102,7 +100,7 @@ export default function Nmap({
         SA
       </p>
       <p className="gap">
-        Nmap done: 1 IP address (1 host up) scanned in {uptime}.00 seconds
+        Nmap done: 1 IP address (1 host up) scanned in 1.37 seconds
       </p>
     </>
   );

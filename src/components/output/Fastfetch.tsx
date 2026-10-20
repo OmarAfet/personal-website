@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { n } from "@/data/achievements";
 import { emblem } from "@/data/art";
-import { age, profile } from "@/data/profile";
+import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import stats from "@/data/stats.json";
 
@@ -31,7 +31,6 @@ export default function Fastfetch() {
     ["OS", "Offensive Security"],
     ["Host", profile.location],
     ["Kernel", "Founder & CEO @ DRJAT"],
-    ["Uptime", `${age()} years`],
     [
       "Packages",
       <a key="p" href="#projects">
@@ -42,7 +41,7 @@ export default function Fastfetch() {
     ["CTF", `FlagYard #${fy.rank} of ${n(fy.players)} (${fy.level})`],
     ["Bounty", `${stats.bugbounty.valid} valid findings on bugbounty.sa`],
     ["Ex", "SDAIA, COOP 2026"],
-    ["Edu", "King Saud University, 2026"],
+    ["Edu", "King Saud University"],
     ["Locale", "ar_SA.UTF-8, en_US.UTF-8"],
   ];
   return (

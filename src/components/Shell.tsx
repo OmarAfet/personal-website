@@ -52,11 +52,9 @@ const zones = [
 export default function Shell({
   sections,
   links,
-  uptime,
 }: {
   sections: Section[];
   links: Link[];
-  uptime: number;
 }) {
   const [log, setLog] = useState<Entry[]>([]);
   const [value, setValue] = useState("");
@@ -170,7 +168,8 @@ export default function Shell({
           : "setfont: 8x16 cells";
       }
       case "uptime":
-        return ` up ${uptime} years, 1 user, load average: 0.42, 0.13, 0.37`;
+        // Time since the page loaded, not Omar's age (removed 2026-10-21).
+        return ` up ${Math.floor(performance.now() / 60000)} min, 1 user, load average: 0.42, 0.13, 0.37`;
       case "whoami":
         return "root";
       case "pwd":

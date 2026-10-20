@@ -31,7 +31,7 @@ const about: Doc = {
   description: `${profile.name}: ${profile.headline}. Riyadh, Saudi Arabia.`,
   blocks: [
     {
-      p: `${profile.name} (${profile.fullName}) is an offensive security practitioner and CTF player from Riyadh, Saudi Arabia, and the founder and CEO of DRJAT, an AI exam-preparation platform for the Saudi Qiyas tests.`,
+      p: `${profile.name} is an offensive security practitioner and CTF player from Riyadh, Saudi Arabia, and the founder and CEO of DRJAT, an AI exam-preparation platform for the Saudi Qiyas tests.`,
     },
     {
       p: `On FlagYard he ranks #${fy.rank} of ${n(fy.players)} players at ${fy.level} level, with ${n(fy.points)} points, and has solved ${labs.solved} of the ${labs.all} open lab challenges.${
@@ -48,7 +48,7 @@ const about: Doc = {
         .join(", ")}).`,
     },
     {
-      p: "He holds a Bachelor of Applied Computing from King Saud University (2026) and completed the COOP training program at SDAIA, the Saudi Data & AI Authority, in 2026.",
+      p: "He holds a Bachelor of Applied Computing from King Saud University and completed the COOP training program at SDAIA, the Saudi Data & AI Authority, in 2026.",
     },
     {
       p: "He builds in Python, Rust and TypeScript: AI products such as Reqab, Isnad and Daqeeqah, systems such as the Obsidium Minecraft server, and DRJAT itself.",

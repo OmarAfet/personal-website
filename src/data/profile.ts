@@ -2,7 +2,6 @@ import stats from "./stats.json";
 
 export const profile = {
   name: "Omar Afet",
-  fullName: "Omar Mohammed Afet Alenezi",
   handle: "OmarAfet",
   // Chosen 2026-10-19 to replace the long X bio everywhere (site, X, LinkedIn, GitHub).
   headline: "Offensive Security · CTF Player · Founder of DRJAT",
@@ -10,11 +9,8 @@ export const profile = {
   url: "https://omarafet.vercel.app",
 };
 
-export function age(on = new Date()) {
-  const [year, month] = profile.born.split("-").map(Number) as [number, number];
-  return on.getFullYear() - year - (on.getMonth() + 1 < month ? 1 : 0);
-}
-
+// No age, date of birth or full name: Omar removed them from the site
+// (2026-10-21). "Omar Afet" is the only name published.
 // No email, phone or photo: Omar did not pick any of them for the site (2026-10-19).
 export const links = [
   { name: "x", href: "https://x.com/OmarAfet", label: "x.com/OmarAfet" },

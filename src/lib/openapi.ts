@@ -51,7 +51,6 @@ const schemas = {
     type: "object",
     properties: {
       name: str,
-      fullName: str,
       handle: str,
       headline: str,
       location: str,

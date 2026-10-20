@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from "react";
 import { banner } from "@/data/art";
-import { age, profile } from "@/data/profile";
+import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import stats from "@/data/stats.json";
 
@@ -14,8 +14,9 @@ const ok = (text: string) => (
 );
 
 // The system is "OmarOS", not a real distro: Omar does not use Arch, and the
-// Arch name made visitors think he does (2026-10-19). Its version is his age.
-const OS = `OmarOS ${age()}`;
+// Arch name made visitors think he does (2026-10-19). No version: it was his
+// age, which Omar took off the site (2026-10-21).
+const OS = "OmarOS";
 
 const boot: ReactNode[] = [
   "[    0.000000] Linux version 6.17.2-omaros (root@omarafet)",

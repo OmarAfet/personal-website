@@ -13,7 +13,7 @@ import Shell from "@/components/Shell";
 import StatusBar from "@/components/StatusBar";
 import Step from "@/components/Step";
 import Typewriter from "@/components/Typewriter";
-import { age, links, profile } from "@/data/profile";
+import { links, profile } from "@/data/profile";
 import { filters, projects } from "@/data/projects";
 import { sections } from "@/data/sections";
 
@@ -35,14 +35,7 @@ const outputs: Record<string, ReactNode> = {
   ctf: <FlagYardProfile />,
   events: <FlagYardEvents />,
   bounty: <BugBounty />,
-  projects: (
-    <Nmap
-      hosts={projects}
-      filters={filters}
-      started={started}
-      uptime={age(now)}
-    />
-  ),
+  projects: <Nmap hosts={projects} filters={filters} started={started} />,
   experience: <Last />,
   achievements: <Achievements />,
   certs: <Certificates />,
@@ -81,7 +74,7 @@ const graph = {
       "@type": "Person",
       "@id": `${site}/#person`,
       name: profile.name,
-      alternateName: [profile.fullName, profile.handle],
+      alternateName: profile.handle,
       url: `${site}/`,
       image: `${site}/opengraph-image`,
       description: profile.headline,
@@ -148,7 +141,7 @@ export default function Home() {
             {outputs[s.id]}
           </Step>
         ))}
-        <Shell sections={sections} links={links} uptime={age(now)} />
+        <Shell sections={sections} links={links} />
       </main>
       <StatusBar
         windows={sections.flatMap((s) =>

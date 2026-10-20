@@ -133,7 +133,6 @@ const run: Record<string, (args: Args) => Result> = {
   omarafet_get_profile: () => ({
     data: {
       name: profile.name,
-      fullName: profile.fullName,
       handle: profile.handle,
       headline: profile.headline,
       location: profile.location,

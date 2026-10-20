@@ -38,7 +38,7 @@ Content lives in `src/data`, not in components. To add a project, add a host to
 - **Design: Linux console.** Chosen by Omar from a style lab of eight named styles; he wanted
   the look of a Linux installer: black screen, pixel font, commands that type themselves.
   Projects are an `nmap` scan ("attack surface"), not a timeline.
-- **System name: OmarOS**, version = Omar's age. Not "Arch Linux": he does not use Arch, and
+- **System name: OmarOS**, no version (it was Omar's age; removed 2026-10-21). Not "Arch Linux": he does not use Arch, and
   the name made visitors think he does. The look (systemd lines, console font) is generic Linux.
 - **Every load boots from the top.** Reloading replays the boot log; the scroll position is not
   restored unless the URL has a `#section`.

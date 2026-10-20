@@ -48,7 +48,6 @@ export const metadata: Metadata = {
   keywords: [
     profile.name,
     profile.handle,
-    profile.fullName,
     "offensive security",
     "red teaming",
     "penetration testing",

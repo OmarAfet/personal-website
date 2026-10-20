@@ -47,7 +47,6 @@ export const resources: Record<string, Resource> = {
     schema: "Profile",
     object: () => ({
       name: profile.name,
-      fullName: profile.fullName,
       handle: profile.handle,
       headline: profile.headline,
       location: profile.location,

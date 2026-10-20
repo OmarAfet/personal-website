@@ -51,7 +51,8 @@ function home() {
     "## Summary",
     "",
     ...sessions.map(
-      (s) => `- ${md(s.role, s.href)}: ${s.from} – ${s.to ?? "present"}`,
+      (s) =>
+        `- ${md(s.role, s.href)}${s.from ? `: ${s.from} – ${s.to ?? "present"}` : ""}`,
     ),
     `- FlagYard: #${fy.rank} of ${n(fy.players)} players, ${fy.level}, ${n(fy.points)} points`,
     `- bugbounty.sa: ${bb.valid} valid findings (${severity}), verified researcher`,

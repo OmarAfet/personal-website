@@ -23,16 +23,18 @@ export default function Last() {
           <li key={s.host}>
             <p>
               omar{"   "}
-              <span className="hi">{s.host.padEnd(6)}</span> {s.from} -{" "}
-              {s.to ? (
+              <span className="hi">{s.host.padEnd(6)}</span>{" "}
+              {!s.from ? (
+                <span className="dim">(graduated)</span>
+              ) : s.to ? (
                 <>
-                  {s.to}{" "}
-                  <span className="dim">
-                    ({s.host === "ksu" ? "graduated" : months(s.from, s.to)})
-                  </span>
+                  {s.from} - {s.to}{" "}
+                  <span className="dim">({months(s.from, s.to)})</span>
                 </>
               ) : (
-                <span className="ok">still logged in</span>
+                <>
+                  {s.from} - <span className="ok">still logged in</span>
+                </>
               )}
             </p>
             <p className="sub">

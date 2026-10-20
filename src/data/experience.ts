@@ -1,11 +1,12 @@
 // Printed as `last`: each role is a login session. Sources: LinkedIn (via
-// PROFILE.md), the SDAIA completion certificate (18 Jan - 16 Jul 2026) and the
-// KSU graduation certificate (18 Jun 2026).
+// PROFILE.md) and the SDAIA completion certificate (18 Jan - 16 Jul 2026).
+// A session with no `from` has no published dates: Omar removed the KSU
+// dates, since they let a reader estimate his age (2026-10-21).
 export type Session = {
   host: string;
   role: string;
-  from: string;
-  to: string | null;
+  from?: string;
+  to?: string | null;
   href?: string;
 };
 
@@ -32,7 +33,5 @@ export const sessions: Session[] = [
   {
     host: "ksu",
     role: "Bachelor of Applied Computing, King Saud University",
-    from: "Jan 2022",
-    to: "Jun 2026",
   },
 ];
